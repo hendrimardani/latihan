@@ -35,16 +35,29 @@ class Hitung:
         #          Hasil Matirx adalah {mt_hasil}"
         return f"flat1 = {flat1} \n flat2 = {flat2} \n Hasil = {hasil2}"
     
-# class Hitung2(Hitung):
-#     def __init__(self, a=None):
-#         super(Hitung2).__init__()
+class Hitung2(Hitung):
+    def __init__(self, a=None, b=None, flat1=None, flat2=None, dot=None, dot_2=None):
+        super().__init__(a=None, b=None, flat1=None, flat2=None)
+        self.a = a
+        self.b = b
+        self.flat1 = flat1
+        self.flat2 = flat2
+        self.dot = dot
+        self.dot_2 = dot_2
 
-#         def hitung2(self):
-#             a = torch.tensor(self.a)
+    @property
+    def perkalian(self):
+        self.mt_a_2 = torch.tensor(self.dot)
+        self.mt_b_2 = torch.tensor(self.dot_2)
 
-#             return a
+        return self.mt_a_2, self.mt_b_2, torch.matmul(self.mt_a_2, self.mt_b_2)
+    
+    def hasil2(self):
+        mt_a, mt_b, hasil = self.perkalian
 
-#         def __str__(self):
+        return f"Matrix a adalah {mt_a}\nMatrix b adalah {mt_b}\n \
+                 Hasilnya adalah {hasil}"
 
-hasil = Hitung(1, 2, flat1=[[1,2,3], [4,5,6]], flat2=[4, 5, 6])
-print(hasil)
+hasil = Hitung2(a=4, b=10, flat1=[[11, 22, 33]], flat2=[[44, 55, 66]], \
+                dot=[1, 2, 3], dot_2=[4, 4, 5])
+print(hasil.hasil2())
