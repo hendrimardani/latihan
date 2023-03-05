@@ -37,7 +37,7 @@ class Hitung:
     
 class Hitung2(Hitung):
     def __init__(self, a=None, b=None, flat1=None, flat2=None, dot=[10, 11, 12], dot_2=None):
-        super().__init__(a=None, b=None, flat1=None, flat2=None)
+        super(Hitung2).__init__()
         self.a = a
         self.b = b
         self.flat1 = flat1
@@ -62,7 +62,7 @@ class Hitung2(Hitung):
     #              Hasilnya adalah {hasil}"
 
 hasil = Hitung2(a=4, b=10, flat1=[[11, 22, 33]], flat2=[[44, 55, 66]], \
-                dot=torch.randint(1, 10, (3,)), dot_2=torch.randint(5, 10, (3,)))
+                dot=torch.randint(1, 5, (3,)), dot_2=torch.randint(1, 5, (3,)))
 print(hasil.hasil2())
 # print(hasil)
 
