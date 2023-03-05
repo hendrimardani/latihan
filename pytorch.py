@@ -59,5 +59,5 @@ class Hitung2(Hitung):
                  Hasilnya adalah {hasil}"
 
 hasil = Hitung2(a=4, b=10, flat1=[[11, 22, 33]], flat2=[[44, 55, 66]], \
-                dot=[1, 2, 3], dot_2=[4, 4, 5])
+                dot=torch.randint(1, 10, (5,)), dot_2=torch.randint(5, 10, (5,)))
 print(hasil.hasil2())
